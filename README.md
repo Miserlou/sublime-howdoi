@@ -9,7 +9,8 @@ it available directly from sublime!
 ## Installation (IMPORTANT)
 
 0. Install **howdoi**: `pip install howdoi`
-1. Install the _howdoi_ package from [Package Control](http://wbond.net/sublime_packages/package_control).
+1. Either clone this repo into your `Packages` directory, or install the _howdoi_ package
+   from [Package Control](http://wbond.net/sublime_packages/package_control) (not available yet).
 2. Set the `howdoi_path` in the `howdoi.sublime-settings` file (Preferences > Package Settings > howdoi).
 
 
