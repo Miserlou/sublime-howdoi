@@ -1,0 +1,6 @@
+{
+    /**
+     * Where your `howdoi` executable lives. Run `which howdoi` to find out.
+     */
+     "howdoi_path": "/usr/loca/bin/"
+}

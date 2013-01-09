@@ -1,0 +1,8 @@
+[
+    {
+        "command": "write_to_panel"
+    },
+    {
+        "command": "prompt_howdoi"
+    }
+]
