@@ -1,4 +1,3 @@
-
 import functools
 import os
 import platform
@@ -16,7 +15,10 @@ PLATFORM_IS_WINDOWS = PLATFORM is 'Windows'
 MISSING_EXECUTABLE_ERROR_MSG = """
 Couldn't run the `howdoi` command (%s).
 
-Make sure you have set a correct value for `howdoi_path` in the settings file (Preferences > Package Settings > howdoi).
+This can mean two things:
+
+1. You don't have `howdoi` installed. Run `sudo pip install howdoi`
+2. You have not set a correct value for `howdoi_path` in the settings file (Preferences > Package Settings > howdoi).
 
 If it still doesn't work, feel free to create an issue here:
 https://github.com/surjikal/sublime-howdoi
