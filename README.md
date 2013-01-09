@@ -6,7 +6,14 @@ This plugin wraps Benjamin Gleitzman's glorious [howdoi](https://github.com/glei
 it available directly from sublime!
 
 
-##Usage
+## Installation (IMPORTANT)
+
+0. Install _howdoi_: `pip install howdoi`
+1. Install the _howdoi_ package from [Package Control](http://wbond.net/sublime_packages/package_control).
+2. Set the `howdoi_path` in the `howdoi.sublime-settings` file (Preferences > Package Settings > howdoi).
+
+
+## Usage
 
 Hit `ctrl+shift+h` (use `command` instead of `ctrl` on OSX) and write your query in the prompt.
 
@@ -16,8 +23,3 @@ Hit `ctrl+shift+h` (use `command` instead of `ctrl` on OSX) and write your query
 None yet!
 
 
-## Installation
-
-0. Install _howdoi_: `pip install howdoi`
-1. Install the _howdoi_ package from [Package Control](http://wbond.net/sublime_packages/package_control).
-2. Set the `howdoi_path` in the `howdoi.sublime-settings` file (Preferences > Package Settings > howdoi).
