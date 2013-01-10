@@ -17,7 +17,7 @@ Couldn't run the `howdoi` command (%s).
 
 This can mean two things:
 
-1. You don't have `howdoi` installed. Run `sudo pip install howdoi`
+1. You don't have `howdoi` installed. Run `sudo pip install howdoi`.
 2. You have not set a correct value for `howdoi_path` in the settings file (Preferences > Package Settings > howdoi).
 
 If it still doesn't work, feel free to create an issue here:
