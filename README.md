@@ -6,12 +6,11 @@ This plugin wraps Benjamin Gleitzman's glorious [howdoi](https://github.com/glei
 it available directly from sublime!
 
 
-## Installation (IMPORTANT)
+## Installation (important)
 
 0. Install **howdoi**: `pip install howdoi`
-1. Either clone this repo into your `Packages` directory, or install the _howdoi_ package
-   from [Package Control](http://wbond.net/sublime_packages/package_control) (not available yet).
-2. Set the `howdoi_path` in the `howdoi.sublime-settings` file (Preferences > Package Settings > howdoi).
+1. Install the _howdoi_ package from [Package Control](http://wbond.net/sublime_packages/package_control) (not available yet), or clone this repo into your `Packages` directory.
+2. If needed, set the `howdoi_path` in the `howdoi.sublime-settings` file (Preferences > Package Settings > howdoi).
 
 
 ## Usage
