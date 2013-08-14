@@ -1,15 +1,10 @@
 import functools
 import os
-import platform
 
 import sublime
 import sublime_plugin
 
 from async_exec import AsyncProcess, ProcessListener
-
-
-PLATFORM = platform.system()
-PLATFORM_IS_WINDOWS = PLATFORM is 'Windows'
 
 
 MISSING_EXECUTABLE_ERROR_MSG = """
@@ -41,10 +36,9 @@ class PromptHowdoiCommand(sublime_plugin.WindowCommand, ProcessListener):
 
     SETTINGS = sublime.load_settings("howdoi.sublime-settings")
 
-
     def run(self):
-        self.window.show_input_panel('howdoi>', '', self.on_prompt_done, None, None)
-
+        self.window.show_input_panel(
+            'howdoi>', '', self.on_prompt_done, None, None)
 
     def on_prompt_done(self, text):
         sublime.status_message("Fetching answer...")
@@ -54,18 +48,15 @@ class PromptHowdoiCommand(sublime_plugin.WindowCommand, ProcessListener):
         except OSError as e:
             self.write_to_panel(MISSING_EXECUTABLE_ERROR_MSG % str(e))
         except Exception as e:
-             self.write_to_panel(UNHANDLED_EXCEPTION_ERROR_MSG % str(e))
-
+            self.write_to_panel(UNHANDLED_EXCEPTION_ERROR_MSG % str(e))
 
     def on_data(self, proc, data):
         print "[howdoi] Data: %s" % data
         sublime.set_timeout(functools.partial(self.write_to_panel, data), 0)
 
-
     def on_finished(self, proc):
         print "[howdoi] Finished."
         sublime.set_timeout((lambda: sublime.status_message("Done!")), 0)
-
 
     def write_to_panel(self, text):
         active_view = self.window.active_view()
@@ -79,21 +70,14 @@ class PromptHowdoiCommand(sublime_plugin.WindowCommand, ProcessListener):
             'text': text
         })
 
-
     def run_howdoi(self, query,  position=1, display_link_only=False, display_full_answer=False):
         args = ['howdoi', query]
         path = self.SETTINGS.get('howdoi_path')
         return self._execute_program(args, path)
 
-
     def _execute_program(self, args, path):
-        if path and PLATFORM_IS_WINDOWS:
-            os.environ['PATH'] = path
-            path = None
-
         env = {'PATH': path} if path else None
         return AsyncProcess(args, env, self)
-
 
 
 class WriteToPanelCommand(sublime_plugin.TextCommand):
@@ -114,4 +98,3 @@ class WriteToPanelCommand(sublime_plugin.TextCommand):
         panel.set_read_only(True)
 
         window.run_command('show_panel', {'panel': 'output.%s' % name})
-
